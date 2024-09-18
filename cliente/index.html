@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <script type="module" src="/chat.js"></script>
+    <style>
+        #chat {
+    border: 3px solid #333;
+    border-radius: 12px;
+    width: 380px;
+    height: 85vh;
+    background: linear-gradient(145deg, #ffffff, #e0e0e0); /* Degradado sutil para un efecto moderno */
+    box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.3), -8px -8px 16px rgba(255, 255, 255, 0.7); /* Sombra dual para profundidad */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+#messages {
+    list-style-type: none;
+    margin: 0;
+    padding: 16px;
+    overflow-y: auto;
+    flex: 1;
+    scroll-behavior: smooth;
+    background: #fafafa; /* Fondo gris claro para el área de mensajes */
+}
+
+#messages>li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    background: #d1c4e9; /* Fondo lavanda para los mensajes */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra ligera para los mensajes */
+}
+
+#messages>li:nth-child(odd) {
+    background: #e8eaf6; /* Fondo azul claro alternativo para los mensajes impares */
+}
+
+#form {
+    border-top: 2px solid #333;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    background: #eceff1; /* Fondo gris claro para el formulario */
+}
+
+#input {
+    border-radius: 20px;
+    border: 2px solid #ddd;
+    flex: 1;
+    margin-right: 8px;
+    padding: 8px 16px;
+    font-size: 1rem;
+    background: #ffffff; /* Fondo blanco para el campo de entrada */
+}
+
+#input:focus {
+    border-color: #333;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra al enfocar */
+}
+
+#form>button {
+    background: #673ab7; /* Color morado para el botón */
+    color: #fff;
+    border: 0;
+    padding: 10px 16px;
+    border-radius: 20px;
+    font-size: 1rem;
+    cursor: pointer;
+   
+}
+
+#form>button:hover {
+    background: #512da8; /* Color morado oscuro para el hover */
+    
+}
+
+#form>button:active {
+    transform: scale(0.95); /* Reduce el tamaño del botón cuando se hace clic */
+}
+
+   
+
+    </style>
+</head>
+<body>
+<section id="chat">
+    <ul id="messages"></ul>
+    <form id="form">
+        <input type="text" id="input" placeholder="Escribe tu mensaje..." required>
+        <button type="submit">Enviar</button>
+    </form>
+</section>
+</body>
+</html>
